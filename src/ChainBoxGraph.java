@@ -109,7 +109,7 @@ public class ChainBoxGraph extends Stage {
         // TODO : Gérer l'ordre de lecture de la matrice
         int tmp = 0;
         this.tmpJobNumber = -1;
-        this.intMachineEndTimeOfWork = new int[matrix[0].length];
+        this.intMachineEndTimeOfWork = new int[matrix.length];
         for (int a = 1; a < matrix.length; a++){    // TODO : Vérifier la length
             tmp += matrix[a-1][0];
             this.intMachineEndTimeOfWork[a] = tmp;
@@ -118,7 +118,7 @@ public class ChainBoxGraph extends Stage {
             for (int machine = 0; machine < matrix.length; machine++){
                 drawRectangle(job, machine, matrix[machine][job]);
                 intMachineEndTimeOfWork[machine] += matrix[machine][job];
-                if (machine < matrix[machine].length -1 && intMachineEndTimeOfWork[machine] > intMachineEndTimeOfWork[machine + 1]){
+                if (machine < matrix.length -1 && intMachineEndTimeOfWork[machine] > intMachineEndTimeOfWork[machine + 1]){
                     intMachineEndTimeOfWork[machine + 1] = intMachineEndTimeOfWork[machine];
                 }
             }

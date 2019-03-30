@@ -15,15 +15,15 @@ public class Main {
         //Float[][] matrix = DataGenerator.generateMatrix(10,10, 1f, 10f);
         long generation = System.currentTimeMillis() - start;
         //DataPrinter.printMatrix(matrix);
-        System.out.println("Makespan = " + MakeSpanCalculator.calculateMakeSpan(matrix));
+        System.out.println("Makespan = " + MakeSpanCalculator.calculateMakespan(matrix));
 
         long a = System.currentTimeMillis();
         MatrixManipulator.permuteColumn(matrix, 0,1);
         long spanA = System.currentTimeMillis();
         spanA -= a;
         //DataPrinter.printMatrix(matrix);
-        int makeSpan = MakeSpanCalculator.calculateMakeSpan(matrix);
-        //float makeSpan = MakeSpanCalculator.calculateMakeSpan(matrix);
+        int makeSpan = MakeSpanCalculator.calculateMakespan(matrix);
+        //float makeSpan = MakeSpanCalculator.calculateMakespan(matrix);
         System.out.println("Makespan = " + makeSpan);
 
         long b = System.currentTimeMillis();
@@ -39,7 +39,7 @@ public class Main {
 
         /*
         Integer[][] matrix = new Integer[][]{{5,3,9},{7,4,4},{1,7,8}};
-        int makeSpan = MakeSpanCalculator.calculateMakeSpan(matrix);
+        int makeSpan = MakeSpanCalculator.calculateMakespan(matrix);
         System.out.println("MakeSpan = " + makeSpan);
         */
 
@@ -56,9 +56,7 @@ public class Main {
             }
         });
     }
-
     public static void startup(Runnable r) {
         com.sun.javafx.application.PlatformImpl.startup(r);
     }
-
 }
